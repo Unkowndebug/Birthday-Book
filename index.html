@@ -53,8 +53,13 @@ button{font:inherit;color:inherit}
   text-shadow:0 0 .6em rgba(255,200,90,.7),0 .06em 0 rgba(60,20,0,.6);clip-path:inset(-20% 100% -20% 0)}
 #skymsg .l2{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-weight:400;font-size:1.15em;color:#fff1c8;overflow-wrap:anywhere}
 .skip{position:absolute;bottom:max(1.4rem,env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-#wiz{position:fixed;left:0;top:0;width:var(--ww,200px);z-index:75;pointer-events:none;opacity:0;will-change:transform}
-#wiz svg{display:block;width:100%;height:auto;overflow:visible}
+#wiz{--u:calc(var(--ww,200px) / 220);position:fixed;left:0;top:0;width:var(--ww,200px);height:calc(var(--ww,200px) * .7727);z-index:75;pointer-events:none;opacity:0;will-change:transform;perspective:calc(var(--ww,200px) * 4)}
+.w3,.w3-yaw{position:absolute;inset:0;transform-style:preserve-3d}
+.w3-yaw{transform:rotateY(-38deg) rotateX(8deg)}
+.ly{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.w3-plane{position:absolute;pointer-events:none}
+.w3-plane svg{display:block;width:100%;height:100%;overflow:visible}
+.w3-brim{border-radius:50%;background:radial-gradient(circle,#4a39a6 0,#34267a 55%,#241a5a 100%)}
 .scarf{transform-box:fill-box;transform-origin:100% 50%;animation:flutter .22s ease-in-out infinite alternate}
 @keyframes flutter{from{transform:skewY(-8deg) scaleX(1)}to{transform:skewY(8deg) scaleX(.88)}}
 .bristles{transform-box:fill-box;transform-origin:100% 50%;animation:swish .18s ease-in-out infinite alternate}
@@ -254,36 +259,10 @@ button{font:inherit;color:inherit}
 <div id="intro" role="presentation">
   <div class="moon"></div>
   <div class="cloud c1"></div><div class="cloud c2"></div>
-  <div id="skymsg" aria-hidden="true"><span class="l1">Happy Birthday,</span><span class="l2" data-name>Bestie</span></div>
+  <div id="skymsg" aria-hidden="true"><span class="l1">Happy Birthday,</span><span class="l2" data-name>Benjamin!!!</span></div>
   <div class="skip">Tap to skip</div>
 </div>
-<div id="wiz" aria-hidden="true">
-  <svg viewBox="0 -20 220 170">
-    <g class="bristles"><path d="M56 95 C40 92 22 84 4 76 C13 92 13 110 4 126 C24 117 40 111 56 108 Z" fill="#d9a441"/><path d="M52 98 C36 96 22 92 10 88 M52 102 C36 102 22 102 9 102 M52 106 C36 108 22 112 10 116" stroke="#a9742a" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>
-    <path d="M54 102 L208 82" stroke="#7a4a22" stroke-width="7" stroke-linecap="round"/>
-    <path d="M56 91 V112" stroke="#5b3a1a" stroke-width="5" stroke-linecap="round"/>
-    <g class="scarf"><path d="M112 60 C98 58 84 50 66 58 C78 66 94 70 108 68 Z" fill="#c9482f"/><path d="M96 62 L90 70 M82 58 L76 66" stroke="#8f2e1c" stroke-width="2" fill="none"/></g>
-    <path d="M106 90 C102 100 102 108 106 116" stroke="#2a1d66" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <ellipse cx="108" cy="121" rx="8" ry="4.5" fill="#5b3a1a"/>
-    <path d="M122 90 C126 100 124 108 128 116" stroke="#2a1d66" stroke-width="9" fill="none" stroke-linecap="round"/>
-    <ellipse cx="131" cy="121" rx="8" ry="4.5" fill="#5b3a1a"/>
-    <path d="M98 94 C92 74 100 58 118 56 C134 56 142 72 138 94 Z" fill="#3a2a86"/>
-    <circle cx="122" cy="72" r="2.4" fill="#e8b64a"/><circle cx="124" cy="82" r="2.4" fill="#e8b64a"/>
-    <path d="M130 66 C138 76 144 84 150 87" stroke="#3a2a86" stroke-width="8" fill="none" stroke-linecap="round"/>
-    <circle cx="151" cy="88" r="5" fill="#f4c9a0"/>
-    <path d="M106 36 C102 46 105 54 112 56 C110 48 111 42 113 36 Z" fill="#4a2c17"/>
-    <circle cx="122" cy="42" r="15" fill="#f4c9a0"/>
-    <circle cx="117" cy="42" r="2.3" fill="#2a1d66"/><circle cx="127" cy="42" r="2.3" fill="#2a1d66"/>
-    <circle cx="117.8" cy="41.2" r=".8" fill="#fff"/><circle cx="127.8" cy="41.2" r=".8" fill="#fff"/>
-    <path d="M117 49 Q122 53 128 49" stroke="#8a3a2a" stroke-width="1.7" fill="none" stroke-linecap="round"/>
-    <circle cx="113" cy="47" r="2.6" fill="#f0a08a" opacity=".6"/><circle cx="131" cy="47" r="2.6" fill="#f0a08a" opacity=".6"/>
-    <ellipse cx="122" cy="31" rx="24" ry="6" fill="#2a1d66"/>
-    <path d="M103 31 C107 14 116 2 128 -6 L141 31 Z" fill="#3a2a86"/>
-    <path d="M128 -6 C124 -14 114 -14 106 -9 C114 -9 121 -7 124 -1 Z" fill="#3a2a86"/>
-    <path d="M104 27 H140" stroke="#e8b64a" stroke-width="5"/>
-    <path d="M122 8 l1.8 4.2 4.4 .4 -3.3 3 1 4.4 -3.9 -2.3 -3.9 2.3 1 -4.4 -3.3 -3 4.4 -.4z" fill="#ffe9a0"/>
-  </svg>
-</div>
+<div id="wiz" aria-hidden="true"><div class="w3"><div class="w3-yaw" id="w3yaw"></div></div></div>
 <div id="bub" aria-hidden="true"></div>
 <div id="flash" aria-hidden="true"></div>
 <div id="pow" aria-hidden="true"><svg viewBox="0 0 200 200"><polygon points="196.0,100.0 161.8,116.6 183.1,148.0 145.3,145.3 148.0,183.1 116.6,161.8 100.0,196.0 83.4,161.8 52.0,183.1 54.7,145.3 16.9,148.0 38.2,116.6 4.0,100.0 38.2,83.4 16.9,52.0 54.7,54.7 52.0,16.9 83.4,38.2 100.0,4.0 116.6,38.2 148.0,16.9 145.3,54.7 183.1,52.0 161.8,83.4" fill="#ffd34d" stroke="#7a1424" stroke-width="5" stroke-linejoin="round"/><text x="100" y="116" text-anchor="middle" font-family="Cinzel Decorative, Georgia, serif" font-weight="700" font-size="44" fill="#7a1424" transform="rotate(-8 100 100)">BONK!</text></svg></div>
@@ -350,9 +329,9 @@ button{font:inherit;color:inherit}
             <span class="eyebrow">A letter for you</span>
             <h2>Dear <span data-name>Bestie</span>,</h2>
             <div class="letter" id="letter">
-              <p>Another trip around the sun, and you made it look easy.</p>
-              <p>I wanted to give you more than a card you read once, so I made a little book. Inside: photos, balloons to pop, a cake, a prize to scratch, and a wall for notes.</p>
-              <p>Happy birthday. I'm really glad you exist.</p>
+              <p>Happiest Birthday to my gentleman, my baby jonas.</p>
+              <p>I can't give you something in personal since malayo tayo sa each other,so I made this little BOOK, inspired by Harry Potter, one of your faves! I LOVE YOU</p>
+              <p>I hope you like it >_< I'm still learning but I poured all my love in creating this.</p>
             </div>
             <p class="sign" id="sign">From <span data-from>your favorite person</span></p>
             <div class="folio"><span>Birthday book</span><span>I of VII</span></div>
@@ -363,7 +342,7 @@ button{font:inherit;color:inherit}
         <!-- 2 photos -->
         <div class="leaf">
           <section class="face front page">
-            <span class="eyebrow">Tap a photo to change it</span>
+            <span class="eyebrow">GALLERY MEMORIES</span>
             <h2>Little memories</h2>
             <div class="polas">
               <button class="pola" type="button" data-slot style="--r:-3deg" aria-label="Replace photo: Golden hour">
@@ -504,7 +483,7 @@ button{font:inherit;color:inherit}
 
 <script>
 (function(){
-  var CONFIG = { name: 'Bestie', from: 'your favorite person' };
+  var CONFIG = { name: 'Benjamin', from: 'your baby Princess' };
   var $ = function(s, r){ return (r||document).querySelector(s); };
   var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -705,6 +684,80 @@ button{font:inherit;color:inherit}
       {opacity:0, transform:'translate(-50%,-100%) scale(1)'}
     ], {duration: ms});
   }
+/* ---- 3D wizard: depth-layered slices in CSS 3D, so it reads as a solid figure when it turns ---- */
+  var NS = 'http://www.w3.org/2000/svg', yawEl = $('#w3yaw');
+  function rgb(hx){ return [parseInt(hx.slice(1,3),16), parseInt(hx.slice(3,5),16), parseInt(hx.slice(5,7),16)]; }
+  function lit(hx, f){ var c = rgb(hx); function q(v){ return Math.max(0, Math.min(255, Math.round(v * f))); } return 'rgb(' + q(c[0]) + ',' + q(c[1]) + ',' + q(c[2]) + ')'; }
+  function layer(inner, z, o){
+    o = o || {};
+    var s = document.createElementNS(NS, 'svg');
+    s.setAttribute('viewBox', '0 -20 220 170'); s.setAttribute('class', 'ly');
+    var tr = 'translateZ(calc(var(--u) * ' + z.toFixed(2) + '))';
+    if (o.sx != null) tr += ' scaleX(' + o.sx.toFixed(3) + ')';
+    if (o.sy != null) tr += ' scaleY(' + o.sy.toFixed(3) + ')';
+    if (o.s != null) tr += ' scale(' + o.s.toFixed(3) + ')';
+    s.style.transform = tr;
+    if (o.o) s.style.transformOrigin = (o.o[0] / 220 * 100).toFixed(2) + '% ' + ((o.o[1] + 20) / 170 * 100).toFixed(2) + '%';
+    s.innerHTML = inner; yawEl.appendChild(s); return s;
+  }
+  function bulge(fn, cx, cy, R, n, mode, zoff){
+    for (var i = 0; i < n; i++){
+      var t = (i / (n - 1)) * 2 - 1, sc = Math.sqrt(Math.max(0, 1 - t * t * .9)), f = .56 + .44 * (t + 1) / 2, o = {o:[cx, cy]};
+      if (mode === 'x') o.sx = sc; else if (mode === 'y') o.sy = sc; else o.s = sc;
+      layer(fn(f), t * R + (zoff || 0), o);
+    }
+  }
+  function plane(cls, x, y, w, h, html, tf){
+    var d = document.createElement('div'); d.className = 'w3-plane ' + cls;
+    d.style.left = 'calc(var(--u) * ' + (x - w / 2) + ')'; d.style.top = 'calc(var(--u) * ' + (y + 20 - h / 2) + ')';
+    d.style.width = 'calc(var(--u) * ' + w + ')'; d.style.height = 'calc(var(--u) * ' + h + ')';
+    d.style.transform = tf; d.innerHTML = html; yawEl.appendChild(d); return d;
+  }
+  function build3d(){
+    var skin = '#f4c9a0', robe = '#3a2a86', robeDk = '#2a1d66', hair = '#4a2c17', gold = '#e8b64a', wood = '#7a4a22', boot = '#5b3a1a', straw = '#d9a441', red = '#c9482f';
+    // broom
+    [-2, 0, 2].forEach(function(z, i){ layer('<path d="M54 102 L208 82" stroke="' + lit(wood, .62 + .2 * i) + '" stroke-width="7" stroke-linecap="round" fill="none"/>', z); });
+    [-3, 0, 3].forEach(function(z, i){ layer('<path d="M56 91 V112" stroke="' + lit('#5b3a1a', .6 + .2 * i) + '" stroke-width="5" stroke-linecap="round" fill="none"/>', z); });
+    bulge(function(f){
+      return '<g class="bristles"><path d="M56 95 C40 92 22 84 4 76 C13 92 13 110 4 126 C24 117 40 111 56 108 Z" fill="' + lit(straw, f) + '"/>' +
+        '<path d="M52 98 C36 96 22 92 10 88 M52 102 C36 102 22 102 9 102 M52 106 C36 108 22 112 10 116" stroke="' + lit('#a9742a', f) + '" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>';
+    }, 30, 101, 13, 9, 'y');
+    // legs and boots (far leg behind, near leg in front)
+    [[-9, 'M106 90 C102 100 102 108 106 116', 108, 121, .6], [9, 'M122 90 C126 100 124 108 128 116', 131, 121, 1]].forEach(function(L){
+      [-2, 0, 2].forEach(function(dz, i){
+        var f = L[4] * (.8 + .1 * i);
+        layer('<path d="' + L[1] + '" stroke="' + lit(robeDk, f) + '" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="' + L[2] + '" cy="' + L[3] + '" rx="8" ry="4.5" fill="' + lit(boot, f) + '"/>', L[0] + dz);
+      });
+    });
+    // far arm
+    [-14, -12, -10].forEach(function(z, i){ layer('<path d="M116 66 C128 76 138 84 147 88" stroke="' + lit(robe, .5 + .06 * i) + '" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="148" cy="89" r="5" fill="' + lit(skin, .55 + .06 * i) + '"/>', z); });
+    // scarf tail
+    [-3, 3].forEach(function(z, i){ layer('<g class="scarf"><path d="M112 60 C98 58 84 50 66 58 C78 66 94 70 108 68 Z" fill="' + lit(red, i ? 1 : .6) + '"/><path d="M96 62 L90 70 M82 58 L76 66" stroke="' + lit('#8f2e1c', i ? 1 : .6) + '" stroke-width="2" fill="none"/></g>', z); });
+    // torso
+    bulge(function(f){
+      return '<path d="M98 94 C92 74 100 58 118 56 C134 56 142 72 138 94 Z" fill="' + lit(robe, f) + '"/>' +
+        '<ellipse cx="118" cy="58" rx="15" ry="5" fill="' + lit(red, f) + '"/>';
+    }, 118, 75, 12, 10, 'x');
+    plane('', 118, 73, 6, 14, '<svg viewBox="0 0 6 14"><circle cx="3" cy="3" r="2.1" fill="#e8b64a"/><circle cx="3" cy="11" r="2.1" fill="#e8b64a"/></svg>', 'translateX(calc(var(--u) * 20)) rotateY(90deg)');
+    // near arm
+    [10, 12, 14].forEach(function(z, i){ layer('<path d="M130 66 C138 76 144 84 150 87" stroke="' + lit(robe, .8 + .1 * i) + '" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="151" cy="88" r="5" fill="' + lit(skin, .85 + .08 * i) + '"/>', z); });
+    // head: hair at the back, skin sphere, face on the front
+    bulge(function(f){ return '<path d="M122 26.2 A15.8 15.8 0 0 0 122 57.8 Z" fill="' + lit(hair, f) + '"/>'; }, 122, 42, 15.8, 9, 'all', .4);
+    bulge(function(f){ return '<circle cx="122" cy="42" r="15" fill="' + lit(skin, f) + '"/>'; }, 122, 42, 15, 13, 'all');
+    plane('', 122, 43, 20, 20,
+      '<svg viewBox="0 0 20 20"><circle cx="6.4" cy="8" r="2.4" fill="#2a1d66"/><circle cx="13.6" cy="8" r="2.4" fill="#2a1d66"/><circle cx="7.1" cy="7.2" r=".85" fill="#fff"/><circle cx="14.3" cy="7.2" r=".85" fill="#fff"/>' +
+      '<path d="M6.5 14 Q10 17.6 13.5 14" stroke="#8a3a2a" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="3.6" cy="12.6" r="2.4" fill="#f0a08a" opacity=".65"/><circle cx="16.4" cy="12.6" r="2.4" fill="#f0a08a" opacity=".65"/></svg>',
+      'translateX(calc(var(--u) * 11.4)) rotateY(90deg)');
+    // hat: flat brim disc, cone, bent tip, star
+    plane('w3-brim', 122, 31, 48, 48, '', 'rotateX(80deg)');
+    bulge(function(f){
+      return '<path d="M104 31 C108 14 116 2 128 -6 L140 31 Z" fill="' + lit(robe, f) + '"/><path d="M104.5 27 H139.5" stroke="' + lit(gold, f) + '" stroke-width="5"/>';
+    }, 122, 31, 12, 10, 'x');
+    [-3, 0, 3].forEach(function(z, i){ layer('<path d="M128 -6 C124 -14 114 -14 106 -9 C114 -9 121 -7 124 -1 Z" fill="' + lit(robe, .65 + .15 * i) + '"/>', z); });
+    plane('', 134.4, 12, 8, 8, '<svg viewBox="0 0 10 10"><path d="M5 0.6 L6.2 3.6 L9.4 3.8 L6.9 5.8 L7.7 9 L5 7.2 L2.3 9 L3.1 5.8 L0.6 3.8 L3.8 3.6 Z" fill="#ffe9a0"/></svg>', 'rotateY(90deg)');
+  }
+  build3d();
+
   function endIntro(skipped){
     if (introDone) return; introDone = true;
     trackOn = false;
@@ -739,9 +792,14 @@ button{font:inherit;color:inherit}
     confetti(bx, by, 120);
     firework(bx - vw * .16, by - vh * .2);
     play(wiz, [
-      {transform:T(bx, by, 1.15, 8), easing:'ease-out'},
-      {transform:T(bx - vw * .18, by - vh * .2, 1, -120), offset:.3, easing:'ease-in'},
+      {transform:T(bx, by, 2.1, 8), easing:'ease-out'},
+      {transform:T(bx - vw * .18, by - vh * .2, 1.5, -120), offset:.3, easing:'ease-in'},
       {transform:T(bx - vw * .3, vh + wh, .85, -380)}
+    ], {duration: 1500, fill:'both'});
+    play(yawEl, [
+      {transform:'rotateY(-66deg) rotateX(12deg)', easing:'ease-out'},
+      {transform:'rotateY(-210deg) rotateX(50deg)', offset:.4, easing:'ease-in'},
+      {transform:'rotateY(-520deg) rotateX(170deg)'}
     ], {duration: 1500, fill:'both'});
     at(300, function(){ say('Ow!', Math.max(vw * .22, bx - vw * .18), Math.max(vh * .12, by - vh * .3), 1000); });
     at(650, function(){ endIntro(false); });
@@ -755,6 +813,12 @@ button{font:inherit;color:inherit}
       {transform:T(vw * .46, vh * .38, 1, 12), offset:.5, easing:'ease-in-out'},
       {transform:T(vw * .74, vh * .24, 1, -14), offset:.76, easing:'ease-in-out'},
       {transform:T(vw + ww * .8, vh * .32, 1, -6)}
+    ], {duration: 3300, fill:'forwards'});
+    play(yawEl, [
+      {transform:'rotateY(-40deg) rotateX(8deg)', easing:'ease-in-out'},
+      {transform:'rotateY(-26deg) rotateX(14deg)', offset:.3, easing:'ease-in-out'},
+      {transform:'rotateY(-52deg) rotateX(4deg)', offset:.62, easing:'ease-in-out'},
+      {transform:'rotateY(-34deg) rotateX(10deg)'}
     ], {duration: 3300, fill:'forwards'});
     play(skymsg, [{clipPath:'inset(-20% 100% -20% 0)'},{clipPath:'inset(-20% -5% -20% 0)'}],
       {duration: 2400, delay: 600, easing:'ease-in-out', fill:'forwards'});
@@ -771,7 +835,12 @@ button{font:inherit;color:inherit}
         {transform:T(vw * .86, vh * .10, .16, 30), opacity:1, easing:'ease-in'},
         {transform:T(vw * .66, vh * .26, .45, -28), opacity:1, offset:.45, easing:'ease-in-out'},
         {transform:T(vw * .52, vh * .40, .8, 38), opacity:1, offset:.75, easing:'ease-in'},
-        {transform:T(bx, by, 1.15, 8), opacity:1}
+        {transform:T(bx, by, 2.1, 8), opacity:1}
+      ], {duration: 1400, fill:'both'});
+      play(yawEl, [
+        {transform:'rotateY(-30deg) rotateX(10deg)', easing:'ease-in-out'},
+        {transform:'rotateY(-62deg) rotateX(-10deg)', offset:.5, easing:'ease-in-out'},
+        {transform:'rotateY(-66deg) rotateX(12deg)'}
       ], {duration: 1400, fill:'both'});
       say('Whoa... whoa... WHOA!', vw * .62, vh * .2, 1300);
       at(1400, function(){ impact(bx, by); });
